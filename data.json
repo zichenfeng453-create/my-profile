@@ -44,31 +44,31 @@
   "timeline": [
     {
       "id": 1,
-      "date": "2018",
-      "title": "大学毕业",
-      "description": "获得新闻传播学学士学位，开始接触摄影。",
+      "date": "2009",
+      "title": "出生",
+      "description": "",
       "type": "education"
     },
     {
       "id": 2,
-      "date": "2019",
-      "title": "第一份工作",
-      "description": "加入某传媒公司担任摄影助理，积累了丰富的实战经验。",
-      "type": "work"
+      "date": "2015",
+      "title": "上小学",
+      "description": "七一小学",
+      "type": "education"
     },
     {
       "id": 3,
       "date": "2021",
-      "title": "自由摄影师",
-      "description": "成为独立自由摄影师，专注于人像和风光摄影。",
-      "type": "work"
+      "title": "上初中",
+      "description": "北京市玉渊潭中学",
+      "type": "education"
     },
     {
-      "id": 4,
-      "date": "2023",
-      "title": "国际摄影奖",
-      "description": "作品《城市光影》获得国际摄影大赛银奖。",
-      "type": "honor",
+      "id": 1778913452994,
+      "date": "2024",
+      "title": "上高中",
+      "description": "北京大学附属中学",
+      "type": "education",
       "image": ""
     }
   ]
