@@ -1,0 +1,71 @@
+{
+  "basic": {
+    "name": "你的名字",
+    "englishName": "Your Name",
+    "avatar": "",
+    "bio": "用镜头记录生活，用脚步丈量世界。",
+    "location": "中国·北京",
+    "occupation": "自由摄影师",
+    "tags": ["摄影师", "旅行者", "咖啡爱好者"],
+    "phone": "138-0000-0000",
+    "wechat": "your_wechat_id",
+    "qq": "123456789",
+    "douyin": "your_douyin_id",
+    "bilibili": "your_bilibili_id",
+    "email": "yourname@example.com"
+  },
+  "gallery": [
+    {
+      "id": 1,
+      "src": "",
+      "title": "作品示例 1",
+      "description": "在这里添加你的摄影作品描述",
+      "category": "风光"
+    },
+    {
+      "id": 2,
+      "src": "",
+      "title": "作品示例 2",
+      "description": "在这里添加你的摄影作品描述",
+      "category": "人像"
+    },
+    {
+      "id": 3,
+      "src": "",
+      "title": "作品示例 3",
+      "description": "在这里添加你的摄影作品描述",
+      "category": "街拍"
+    }
+  ],
+  "timeline": [
+    {
+      "id": 1,
+      "date": "2018",
+      "title": "大学毕业",
+      "description": "获得新闻传播学学士学位，开始接触摄影。",
+      "type": "education"
+    },
+    {
+      "id": 2,
+      "date": "2019",
+      "title": "第一份工作",
+      "description": "加入某传媒公司担任摄影助理，积累了丰富的实战经验。",
+      "type": "work"
+    },
+    {
+      "id": 3,
+      "date": "2021",
+      "title": "自由摄影师",
+      "description": "成为独立自由摄影师，专注于人像和风光摄影。",
+      "type": "work"
+    },
+    {
+      "id": 4,
+      "date": "2023",
+      "title": "国际摄影奖",
+      "description": "作品《城市光影》获得国际摄影大赛银奖。",
+      "type": "honor",
+      "image": ""
+    }
+  ]
+}

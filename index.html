@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人主页</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#profile" class="nav-brand">个人主页</a>
+      <div class="nav-links">
+        <a href="#profile">关于</a>
+        <a href="#gallery">作品</a>
+        <a href="#timeline">生涯</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 个人名片区 -->
+  <section id="profile" class="section section-profile">
+    <div class="container">
+      <div class="profile-card">
+        <div class="profile-avatar-wrap">
+          <img id="profile-avatar" class="profile-avatar" src="" alt="头像">
+          <div id="avatar-placeholder" class="avatar-placeholder">📷</div>
+        </div>
+        <h1 id="profile-name" class="profile-name"></h1>
+        <p id="profile-english-name" class="profile-english-name"></p>
+        <p id="profile-bio" class="profile-bio"></p>
+        <div id="profile-tags-container" class="profile-tags"></div>
+        <div class="profile-contact">
+          <div class="contact-row">
+            <button id="btn-phone" class="btn btn-copy" data-copy="">
+              <span class="btn-icon">📞</span>
+              <span class="btn-label">复制电话</span>
+            </button>
+            <button id="btn-wechat" class="btn btn-copy" data-copy="">
+              <span class="btn-icon">💬</span>
+              <span class="btn-label">复制微信</span>
+            </button>
+            <button id="btn-qq" class="btn btn-copy" data-copy="">
+              <span class="btn-icon">🐧</span>
+              <span class="btn-label">复制QQ</span>
+            </button>
+            <button id="btn-douyin" class="btn btn-copy" data-copy="">
+              <span class="btn-icon">🎵</span>
+              <span class="btn-label">复制抖音号</span>
+            </button>
+            <button id="btn-bilibili" class="btn btn-copy" data-copy="">
+              <span class="btn-icon">📺</span>
+              <span class="btn-label">复制B站号</span>
+            </button>
+          </div>
+          <a id="btn-email" class="btn btn-email" href="">
+            <span class="btn-icon">✉️</span>
+            <span>发送邮件</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 摄影作品集 -->
+  <section id="gallery" class="section section-gallery">
+    <div class="container">
+      <h2 class="section-title">摄影作品</h2>
+      <div class="gallery-filters" id="gallery-filters"></div>
+      <div class="gallery-grid" id="gallery-grid"></div>
+    </div>
+  </section>
+
+  <!-- 图片预览弹窗 -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-info" id="lightbox-info"></div>
+  </div>
+
+  <!-- 成长生涯时间线 -->
+  <section id="timeline" class="section section-timeline">
+    <div class="container">
+      <h2 class="section-title">成长生涯</h2>
+      <div class="timeline" id="timeline-list"></div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <p>&copy; 2025 个人主页. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管理编辑 — 个人主页</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- 登录页 -->
+<div id="login-screen" class="login-screen">
+  <div class="login-card">
+    <h1>🔐 管理登录</h1>
+    <p class="login-desc">请输入管理密码以编辑网站内容</p>
+    <input type="password" id="login-password" class="input" placeholder="请输入密码" autofocus>
+    <div id="login-error" class="login-error"></div>
+    <button id="login-btn" class="btn btn-primary">进入管理</button>
+    <p class="login-hint">默认密码: admin123</p>
+  </div>
+</div>
+
+<!-- 编辑主界面 -->
+<div id="editor-screen" class="editor-screen" style="display:none;">
+  <header class="editor-header">
+    <h1>网站内容管理</h1>
+    <div class="editor-header-actions">
+      <button id="btn-save" class="btn btn-save">保存到网站</button>
+      <button id="btn-logout" class="btn btn-outline">退出</button>
+    </div>
+  </header>
+
+  <!-- 标签导航 -->
+  <nav class="editor-tabs">
+    <button class="editor-tab active" data-tab="tab-basic">基本信息</button>
+    <button class="editor-tab" data-tab="tab-gallery">摄影作品</button>
+    <button class="editor-tab" data-tab="tab-timeline">成长生涯</button>
+  </nav>
+
+  <div class="editor-content">
+    <!-- 基本信息表单 -->
+    <section id="tab-basic" class="tab-panel active">
+      <div class="form-row">
+        <div class="form-group">
+          <label>姓名</label>
+          <input type="text" id="ed-name" class="input">
+        </div>
+        <div class="form-group">
+          <label>英文名</label>
+          <input type="text" id="ed-english-name" class="input" placeholder="如: David">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>一句话简介 / 座右铭</label>
+        <input type="text" id="ed-bio" class="input">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>所在地</label>
+          <input type="text" id="ed-location" class="input">
+        </div>
+        <div class="form-group">
+          <label>职业</label>
+          <input type="text" id="ed-occupation" class="input">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>身份标签（逗号分隔，如：摄影师,旅行者,咖啡爱好者）</label>
+        <input type="text" id="ed-tags" class="input" placeholder="摄影师,旅行者,咖啡爱好者">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>电话</label>
+          <input type="text" id="ed-phone" class="input">
+        </div>
+        <div class="form-group">
+          <label>微信</label>
+          <input type="text" id="ed-wechat" class="input">
+        </div>
+        <div class="form-group">
+          <label>QQ</label>
+          <input type="text" id="ed-qq" class="input">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>抖音号</label>
+          <input type="text" id="ed-douyin" class="input" placeholder="如: zhangsan">
+        </div>
+        <div class="form-group">
+          <label>B站号</label>
+          <input type="text" id="ed-bilibili" class="input" placeholder="如: zhangsan_photo">
+        </div>
+        <div class="form-group">
+          <label>邮箱</label>
+          <input type="email" id="ed-email" class="input">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>头像</label>
+        <div class="avatar-edit">
+          <img id="ed-avatar-preview" class="avatar-preview" src="" alt="" style="display:none;">
+          <div id="ed-avatar-ph" class="avatar-preview avatar-ph">📷</div>
+          <div>
+            <input type="file" id="ed-avatar-file" accept="image/*" class="file-input">
+            <button id="ed-avatar-remove" class="btn btn-sm btn-outline" style="margin-top:8px;">移除头像</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>管理密码（修改默认密码）</label>
+        <input type="text" id="ed-password" class="input" placeholder="留空则不修改">
+      </div>
+    </section>
+
+    <!-- 摄影作品管理 -->
+    <section id="tab-gallery" class="tab-panel">
+      <button id="btn-add-gallery" class="btn btn-primary" style="margin-bottom:20px;">+ 添加作品</button>
+      <div id="gallery-edit-list" class="gallery-edit-list"></div>
+    </section>
+
+    <!-- 成长生涯管理 -->
+    <section id="tab-timeline" class="tab-panel">
+      <button id="btn-add-timeline" class="btn btn-primary" style="margin-bottom:20px;">+ 添加节点</button>
+      <div id="timeline-edit-list" class="timeline-edit-list"></div>
+    </section>
+  </div>
+</div>
+
+<!-- GitHub 配置弹窗 -->
+<div id="github-modal" class="modal" style="display:none;">
+  <div class="modal-card">
+    <h2>GitHub 配置</h2>
+    <p class="modal-desc">首次使用需要配置 GitHub 信息，以便保存内容到网站。</p>
+    <div class="form-group">
+      <label>GitHub 用户名</label>
+      <input type="text" id="gh-user" class="input" placeholder="例如: zhangsan">
+    </div>
+    <div class="form-group">
+      <label>仓库名称</label>
+      <input type="text" id="gh-repo" class="input" placeholder="例如: my-profile">
+    </div>
+    <div class="form-group">
+      <label>Personal Access Token (经典令牌)</label>
+      <input type="password" id="gh-token" class="input" placeholder="ghp_xxxxxxxxxxxx">
+      <small class="form-hint"><a href="https://github.com/settings/tokens/new?scopes=repo&description=Personal+Site+Editor" target="_blank">点击此处创建 Token</a>，勾选 repo 权限即可</small>
+    </div>
+    <div class="form-group">
+      <label>分支（默认 main）</label>
+      <input type="text" id="gh-branch" class="input" placeholder="main">
+    </div>
+    <div class="modal-actions">
+      <button id="gh-cancel" class="btn btn-outline">取消</button>
+      <button id="gh-save-data" class="btn btn-save">保存到 GitHub</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast"></div>
+
+<script src="js/github-api.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
